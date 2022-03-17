@@ -31,17 +31,19 @@ export default function InputField() {
 
   const onSubmit = (data) => {
 
-    if(data.inputN >= data.inputR){
-    setInputN(data.inputN)
-    setInputR(data.inputR)
+    if(parseInt(data.inputN) > parseInt(data.inputR)){
+
+      console.log("yessuh")
+      setInputN(parseInt(data.inputN))
+      setInputR(parseInt(data.inputR))
     }
     else{
       notify("Please enter a value greater than or equal to the first input")
+      return
     }
     
   }; 
  
-
   return (
 
     <div className="flex flex-col text-center pt-5">
@@ -62,7 +64,7 @@ export default function InputField() {
       </div>
 
       {/* errors will return when field validation fails  */}
-      {errors.inputR || errors.inputN && notify("This field is required")}
+      {errors.inputR && notify("Input R is required")}
 
       <input type="submit" />
     </form>
