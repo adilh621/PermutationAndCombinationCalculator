@@ -45,7 +45,7 @@ export default function Results({inputN, inputR}) {
     return (
 
 
-      <div className="bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200 px-5 my-10 sm:grid xl:grid-cols-3 3xl:flex flex-wrap justify-center pt-10">
+      <div className="bg-white overflow-hidden rounded-lg  px-5 my-10 sm:grid xl:grid-cols-3 3xl:flex flex-wrap justify-center pt-10">
         <div className="pt-12 sm:pb-5">
         Results for n={inputN} and r={inputR}:
         </div>
