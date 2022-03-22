@@ -35,10 +35,17 @@ export default function InputField() {
 
       if(parseInt(data.inputN) && parseInt(data.inputR)){
 
-        setInputN(parseInt(data.inputN))
-        setInputR(parseInt(data.inputR))
+        if(parseInt(data.inputN) < 171 && parseInt(data.inputR) < 171){
 
-      }
+          setInputN(data.inputN)
+          setInputR(data.inputR)
+
+        }
+        else{
+          notify("Please enter lower values")
+        }
+
+    }
 
     }
     else{
