@@ -62,14 +62,14 @@ export default function InputField() {
     <form onSubmit={handleSubmit(onSubmit)}>
       
       <div className="rounded-md rounded-b-none pt-3 pb-2 ">
-        <label htmlFor="name" className="block text-xs font-medium text-gray-700 pb-4">
+        <label htmlFor="name" className="block text-xs font-large font-semibold text-gray-700 pb-4">
             Total Amount in a Set (n):
         </label>
         <input className="h-8 bg-[#c9ada7]" defaultValue={inputN} {...register("inputN" , {required: true})} />
       </div>
 
       <div className="rounded-md rounded-b-none pt-3 pb-2 ">
-        <label htmlFor="name" className="block text-xs font-medium text-gray-700 pb-4">
+        <label htmlFor="name" className="block text-xs font-large font-semibold text-gray-700 pb-4">
             Total Amount in a Set (r):
         </label>
         <input className="h-8 bg-[#c9ada7]" defaultValue={inputR} {...register("inputR", { required: true })} />

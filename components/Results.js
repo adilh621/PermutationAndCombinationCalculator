@@ -57,8 +57,8 @@ export default function Results({inputN, inputR}) {
     return (
 
 
-      <div className=" bg-[#c9ada7] overflow-hidden rounded-lg border-2 mx-auto border-black justify-center px-5 my-10 sm:max-w-sm md:max-w-xl lg:max-w-7xl sm:grid xl:grid-cols-3 3xl:flex flex-wrap justify-center pt-10">
-        <p className="pt-12 sm:pb-5">
+      <div className=" bg-[#c9ada7] overflow-hidden rounded-lg border-2 mx-auto border-black px-5 my-10 sm:max-w-sm md:max-w-xl lg:max-w-7xl sm:grid xl:grid-cols-3 3xl:flex flex-wrap justify-center pt-10">
+        <p className="pt-12 sm:pb-5 font-semibold">
         Results for n={inputN} and r={inputR}:
         </p>
         <MathJax.Provider options={options}>
