@@ -57,32 +57,36 @@ export default function InputField() {
  
   return (
 
-    <div className="flex flex-col text-center pt-5">
+    <>
+    <div className="flex flex-col flex-grow text-center mx-auto justify-center bg-[#c9ada7] border-2 border-black pb-5 pt-5 mt-7 sm:max-w-sm md:max-w-xl lg:max-w-7xl rounded-lg">
     <form onSubmit={handleSubmit(onSubmit)}>
       
       <div className="rounded-md rounded-b-none pt-3 pb-2 ">
         <label htmlFor="name" className="block text-xs font-medium text-gray-700 pb-4">
             Total Amount in a Set (n):
         </label>
-        <input className="h-8" defaultValue={inputN} {...register("inputN" , {required: true})} />
+        <input className="h-8 bg-[#c9ada7]" defaultValue={inputN} {...register("inputN" , {required: true})} />
       </div>
 
       <div className="rounded-md rounded-b-none pt-3 pb-2 ">
         <label htmlFor="name" className="block text-xs font-medium text-gray-700 pb-4">
             Total Amount in a Set (r):
         </label>
-        <input className="h-8" defaultValue={inputR} {...register("inputR", { required: true })} />
+        <input className="h-8 bg-[#c9ada7]" defaultValue={inputR} {...register("inputR", { required: true })} />
       </div>
 
       {/* errors will return when field validation fails  */}
       {/* {errors.inputR && notify("Input R is required")} */}
 
-      <input type="submit" />
+      <input className="active:scale-95 transform duration-100 ease-out"type="submit" />
     </form>
 
-    <Results className="flex-initial w-64" inputN={inputN} inputR={inputR}/>
+    
     
     </div>
+
+    <Results className="flex max-w-7xl" inputN={inputN} inputR={inputR}/>
+    </>
   );
   }
   

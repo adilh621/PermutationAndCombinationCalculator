@@ -11,15 +11,27 @@ function factorial(num) {
         return (num * factorial(num - 1));
     }
   }
+  function factorialDynamically(num){
+
+    var results =[ ];
+    
+    if(num>=0){
+      results[0] = 1;
+      for(var i = 1; i <= num ; i++ ){
+        results[i] = i * results[i-1]
+      }
+      return results[num]
+    }
+  }
   
 function handleCombination(n, r) {
-    let combinations = factorial(n) / (factorial(r) * factorial(n - r));
+    let combinations = factorialDynamically(n) / (factorialDynamically(r) * factorialDynamically(n - r));
     return combinations
 }
 
 function handlePermutation(n, r) {
 
-    let permutations = factorial(n) / factorial(n - r);
+    let permutations = factorialDynamically(n) / factorialDynamically(n - r);
     return permutations
 }
 
@@ -45,10 +57,10 @@ export default function Results({inputN, inputR}) {
     return (
 
 
-      <div className="bg-white overflow-hidden rounded-lg  px-5 my-10 sm:grid xl:grid-cols-3 3xl:flex flex-wrap justify-center pt-10">
-        <div className="pt-12 sm:pb-5">
+      <div className=" bg-[#c9ada7] overflow-hidden rounded-lg border-2 mx-auto border-black justify-center px-5 my-10 sm:max-w-sm md:max-w-xl lg:max-w-7xl sm:grid xl:grid-cols-3 3xl:flex flex-wrap justify-center pt-10">
+        <p className="pt-12 sm:pb-5">
         Results for n={inputN} and r={inputR}:
-        </div>
+        </p>
         <MathJax.Provider options={options}>
             <div className="px-4 py-5 sm:p-6"><MathJax.Node formula={`nPr = \\frac {${inputN}!}{(${inputN} - ${inputR})!}=${handlePermutation(inputN,inputR)}`}/></div>
             <div className="px-4 py-5 sm:p-6"><MathJax.Node formula = {`nCr = \\frac {${inputN}!}{(${inputR}!)(${inputN} - ${inputR})!}=${handleCombination(inputN,inputR)}`}/> </div>

@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import Header from '../components/Header'
 import InputField from '../components/InputField'
+import Results from '../components/Results'
 
 
 export default function Home() {
@@ -13,10 +14,11 @@ export default function Home() {
       </Head>
 
 
-      <Header/>
+      <Header />
 
 
       <InputField/>
+
 
       
     </div>
